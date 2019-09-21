@@ -1,33 +1,23 @@
-/// Loading requsite data
+/// Require path
 
-var tableData = require("../data/tableData")
+var path = require("path")
 
-
-// Routing 
+/// Routing 
 
 module.exports = function(app) {
-    
-    app.get("/friends/tables", function(req,res) {
-        res.json(tableData)
+
+    /// HTML Get Requests
+
+    app.get("/survey", function(req, res) {
+        res.sendFile(path.join(__dirname, "../public/survey.html"))
     })
 
+    // Default to home if no matching route is present
 
-// Post Request 
-
-app.post("/api/friends", function(req,rest){
-    if (tableData.length<5){
-        tableData.push(req.body)
-        res.json(true)
-    }
-    else {
-    tableData.push(req.body)
-    res.json(false)
-    }
+    app.get("*",function(req,res){
+        res.sendFile(path.join(__dirname,"../public/home.html"))
+    })
 }
 
 
-
-
-
-
-}
+   
