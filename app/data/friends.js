@@ -33,7 +33,7 @@ var friendArray = [
             1,
             3
         ]
-    }
+    },
 ]
 /// Export table array
 
