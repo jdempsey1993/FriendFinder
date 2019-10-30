@@ -1,6 +1,6 @@
 /// Loading requsite data
 
-var tableData = require("../data/tableData")
+var tableData = require("../data/friends.js")
 
 
 // Routing 
